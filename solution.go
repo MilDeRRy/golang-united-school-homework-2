@@ -25,13 +25,12 @@ func CalcSquare(sideLen float64, sidesNum kolvo) float64 {
 	case SidesTriangle == 3:
 		hil = math.Sqrt(3)
 		s = (sideLen * sideLen * hil) / 4
-		return s
 	case SidesSquare == 4:
 		s = sideLen * sideLen
-		return s
 	case SidesCircle == 0:
 		s = math.Pi * (sideLen * sideLen)
-		return s
+	default:
+		s = 0
 	}
-	return 0
+	return s
 }
