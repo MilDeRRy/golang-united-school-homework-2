@@ -1,7 +1,6 @@
 package square
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -19,31 +18,20 @@ var SidesCircle kolvo = 0
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, sidesNum kolvo) (float64, float64, float64) {
+func CalcSquare(sideLen float64, sidesNum kolvo) float64 {
 	var s float64
 	var hil float64
-	var d float64
-	var f float64
 	switch {
 	case SidesTriangle == 3:
 		hil = math.Sqrt(3)
 		s = (sideLen * sideLen * hil) / 4
-		//return s
-	}
-	switch {
+		return s
 	case SidesSquare == 4:
 		s = sideLen * sideLen
-		//return d
-	}
-	switch {
+		return s
 	case SidesCircle == 0:
 		s = math.Pi * (sideLen * sideLen)
-		//return f
+		return s
 	}
-	switch {
-	default:
-		var v string = "error"
-		fmt.Print(v)
-	}
-	return s, d, f
+	return 0
 }
