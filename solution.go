@@ -21,13 +21,13 @@ var SidesCircle kolvo = 0
 func CalcSquare(sideLen float64, sidesNum kolvo) float64 {
 	var s float64
 	var hil float64
-	switch {
-	case SidesTriangle == 3:
+	switch sidesNum {
+	case SidesTriangle:
 		hil = math.Sqrt(3)
 		s = (sideLen * sideLen * hil) / 4
-	case SidesSquare == 4:
+	case SidesSquare:
 		s = sideLen * sideLen
-	case SidesCircle == 0:
+	case SidesCircle:
 		s = math.Pi * (sideLen * sideLen)
 	default:
 		s = 0
