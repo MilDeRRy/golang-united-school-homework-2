@@ -25,15 +25,18 @@ type kolvo int
 func CalcSquare(sideLen float64, sidesNum kolvo) float64 {
 	var s float64
 	var hil float64
+	var SidesTriangle kolvo
+	var SidesSquare kolvo
+	var SidesCircle kolvo
 	switch {
-	case sidesNum == 3:
+	case SidesTriangle == 3:
 		hil = math.Sqrt(3)
 		s = (sideLen * sideLen * hil) / 4
 
-	case sidesNum == 4:
+	case SidesSquare == 4:
 		s = sideLen * sideLen
 
-	case sidesNum == 0:
+	case SidesCircle == 0:
 		s = math.Pi * sideLen * sideLen
 
 	default:
