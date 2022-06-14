@@ -7,12 +7,9 @@ import (
 
 type kolvo int
 
-/*func free() {
-	var sideLen float64
-	var sidesNum int
-	fmt.Scanln(&sideLen, &sidesNum)
-	fmt.Println(CalcSquare)
-}*/
+var SidesTriangle kolvo = 3
+var SidesSquare kolvo = 4
+var SidesCircle kolvo = 0
 
 // Define custom int type to hold sides number and update CalcSquare signature by replacing #yourTypeNameHere#
 
@@ -25,9 +22,7 @@ type kolvo int
 func CalcSquare(sideLen float64, sidesNum kolvo) float64 {
 	var s float64
 	var hil float64
-	var SidesTriangle kolvo = sidesNum
-	var SidesSquare kolvo = sidesNum
-	var SidesCircle kolvo = sidesNum
+
 	switch {
 	case SidesTriangle == 3:
 		hil = math.Sqrt(3)
