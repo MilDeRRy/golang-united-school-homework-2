@@ -2,6 +2,7 @@ package square
 
 import (
 	"fmt"
+	"math"
 )
 
 type kolvo int
@@ -20,23 +21,23 @@ var SidesCircle kolvo = 0
 
 func CalcSquare(sideLen float64, sidesNum kolvo) float64 {
 	var s float64
-	//var d float64
-	//var f float64
-	//var hil float64
-	switch {
-	//case SidesTriangle == 3:
-	//	hil = math.Sqrt(3)
-	//	d = (sideLen * sideLen * hil) / 4
+	var hil float64
+	for i := 0; i <= 3; i++ {
+		switch {
+		case SidesTriangle == 3:
+			hil = math.Sqrt(3)
+			s = (sideLen * sideLen * hil) / 4
 
-	case SidesSquare == 4:
-		s = sideLen * sideLen
+		case SidesSquare == 4:
+			s = sideLen * sideLen
 
-	//case SidesCircle == 0:
-	//	f = math.Pi * (sideLen * sideLen)
+		case SidesCircle == 0:
+			s = math.Pi * (sideLen * sideLen)
 
-	default:
-		var v string = "error"
-		fmt.Print(v)
+		default:
+			var v string = "error"
+			fmt.Print(v)
+		}
 	}
 	return s
 }
